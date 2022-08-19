@@ -10,7 +10,6 @@ class Population:
     def new(self):
         self.birds = self.dead_birds[:]
         self.gen += 1
-        print(self.gen)
         self.bird_fitness = [[bird.fitness, i] for bird, i in zip(self.dead_birds, range(len(self.birds)))]
         self.bird_fitness.sort(reverse=True)
         self.bird_fitness1 = self.bird_fitness[:9]
@@ -27,6 +26,7 @@ class Population:
             new.append(Bird())
         self.birds = new[:]
         self.dead_birds.clear()
+        return self.bird_fitness[0][0]
 
 
     def dead(self, list_):
