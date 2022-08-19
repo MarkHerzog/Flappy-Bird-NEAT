@@ -1,5 +1,6 @@
 import numpy
 import pygame as py, sys
+import matplotlib.pyplot as plt
 py.init()
 
 
@@ -63,6 +64,7 @@ class Game:
         gen = my_font.render('Gen: {}'.format(str(pop.gen)), False, (0, 0, 0))
         for event in py.event.get():
             if event.type == py.QUIT:
+                plt.save('Model.png')
                 sys.exit()
             if event.type == py.KEYDOWN:
                 if event.key == py.K_SPACE:
