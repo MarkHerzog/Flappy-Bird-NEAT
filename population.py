@@ -21,6 +21,7 @@ class Population:
             new_bird1 = Bird()
             new_bird1.b_i_h, new_bird1.b_h_o, new_bird1.b_i_h, new_bird1.b_h_o = self.birds[gb[1]].child(self.birds[bb[1]])
             new.append(new_bird1)
+            self.birds[gb[1]].fitness = 0
             new.append(self.birds[gb[1]])
         while len(new) <= 100:
             new.append(Bird())
